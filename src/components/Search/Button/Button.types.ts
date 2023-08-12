@@ -7,4 +7,6 @@ export interface IButton {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   children?: JSX.Element | JSX.Element[] | string;
   style?: Record<string, string | number>;
+  onMouseOverCapture?: MouseEventHandler<HTMLButtonElement>;
+  onMouseOutCapture?: MouseEventHandler<HTMLButtonElement>;
 }
