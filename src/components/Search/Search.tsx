@@ -14,23 +14,14 @@ const Search = ({
   className,
   style,
 }: IMainSearch) => {
-  const [hover, setHover] = useState(false);
   return (
     <form
       className={`${styles.search} ${className}`}
       style={style}
       onSubmit={onSubmit}
     >
-      <Button
-        type="submit"
-        onMouseOverCapture={() => setHover(true)}
-        onMouseOutCapture={() => setHover(false)}
-      >
-        <SearchIcon
-          width={24}
-          height={24}
-          color={hover ? 'rgb(250, 168, 46)' : '#000000'}
-        />
+      <Button type="submit">
+        <SearchIcon width={24} height={24} />
       </Button>
       <Input value={value} onChange={onChange} />
     </form>

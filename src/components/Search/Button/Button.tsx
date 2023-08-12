@@ -9,8 +9,6 @@ const Button = ({
   style,
   className,
   onClick,
-  onMouseOverCapture,
-  onMouseOutCapture,
 }: IButton) => (
   <button
     type={type}
@@ -18,8 +16,6 @@ const Button = ({
     onClick={onClick}
     style={style}
     disabled={disabled ?? false}
-    onMouseOverCapture={onMouseOverCapture}
-    onMouseOutCapture={onMouseOutCapture}
   >
     {children}
   </button>
