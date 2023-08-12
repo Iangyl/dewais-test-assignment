@@ -1,6 +1,6 @@
 import { IUserData } from 'interfaces/IUserData';
 
-export type ModalType = 'loading' | 'modal' | 'error';
+export type ModalType = 'modal' | 'error';
 export interface IModalContext {
   openModal: (args: IOpenOptions) => void;
   closeModal: () => void;

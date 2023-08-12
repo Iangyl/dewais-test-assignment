@@ -15,7 +15,7 @@ const Modal = ({
   onClose: () => void;
 }) => {
   return (
-    <div className={`${styles.modal} ${styles[type!]}`}>
+    <div className={styles.modal}>
       <div className={styles.top}>
         <Button type="button" onClick={onClose}>
           {type === 'error' ? (
@@ -35,7 +35,7 @@ const Modal = ({
         <img src={content?.userData?.avatar_url} alt="user_avatar" />
         <h3>{content?.userData?.name}</h3>
         <p>{content?.userData?.bio}</p>
-        <p>
+        <p className={styles.linkContainer}>
           <a
             href={content?.userData?.html_url}
             target="_blank"
