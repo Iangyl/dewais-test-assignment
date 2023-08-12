@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Input from './Input/Input';
 import Button from './Button/Button';
 import SearchIcon from 'assets/icons/Search';
@@ -14,21 +14,9 @@ const Search = ({
   className,
   style,
 }: IMainSearch) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleFocus = () => {
-    setIsOpen(true);
-  };
-
-  const handleBlur = () => {
-    setIsOpen(false);
-  };
-
   return (
     <form
       className={`${styles.search} ${className}`}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
       style={style}
       onSubmit={onSubmit}
     >

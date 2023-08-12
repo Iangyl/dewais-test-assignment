@@ -17,7 +17,7 @@ const ModalContainer = ({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    ref.current = document.querySelector<HTMLElement>('#body');
+    ref.current = document.querySelector<HTMLElement>('#root');
     setMounted(true);
   }, []);
 

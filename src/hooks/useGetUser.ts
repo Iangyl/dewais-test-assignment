@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { IUserData, IUserNotFound } from 'interfaces/IUserData';
-import { instanceOfUserData } from 'utils/helpers';
 
 const useGetUser = () => {
   const [data, setData] = useState<IUserData>();
@@ -9,12 +8,12 @@ const useGetUser = () => {
   const makeRequest = async (user: string) => {
     const res = await fetch(`https://api.github.com/users/${user}`);
     const result = await res.json();
-    if (instanceOfUserData(result)) {
-      setError(undefined);
-      setData(result);
-    } else {
+    if ('message' in result) {
       setData(undefined);
       setError(result);
+    } else {
+      setError(undefined);
+      setData(result);
     }
   };
 

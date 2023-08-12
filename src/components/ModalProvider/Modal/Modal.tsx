@@ -30,8 +30,21 @@ const Modal = ({
           )}
         </Button>
       </div>
-      {content && <h2 className={styles.errorTitle}>{content?.userData?.name}</h2>}
-      <div className={styles.content}></div>
+      <h1 className={styles.errorTitle}>{content?.userData?.login}</h1>
+      <div className={styles.content}>
+        <img src={content?.userData?.avatar_url} alt="user_avatar" />
+        <h3>{content?.userData?.name}</h3>
+        <p>{content?.userData?.bio}</p>
+        <p>
+          <a
+            href={content?.userData?.html_url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {content?.userData?.html_url}
+          </a>
+        </p>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,6 @@ function App() {
   const { openModal } = useModal();
   const { data, error, makeRequest } = useGetUser();
   const [search, setSearch] = useState<string>('');
-  console.log(data);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -22,10 +21,11 @@ function App() {
   useEffect(() => {
     if (data) {
       openModal({ type: 'modal', content: { userData: data } });
-    } else {
+    }
+    if (error) {
       openModal({ type: 'error', content: { error: error?.message } });
     }
-  }, [data]);
+  }, [data, error]);
 
   return (
     <div className="App">

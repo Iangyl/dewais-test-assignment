@@ -16,5 +16,6 @@
 @media screen and (min-width: 768px) {
   .App {
     align-items: center;
+    padding-top: 0;
   }
 }

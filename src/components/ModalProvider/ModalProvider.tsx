@@ -1,5 +1,10 @@
 import React, { useState, useCallback, createContext, useContext } from 'react';
-import { IModalContext, IOpenOptions, ModalType, IModalContent } from './ModalProvider.types';
+import {
+  IModalContext,
+  IOpenOptions,
+  ModalType,
+  IModalContent,
+} from './ModalProvider.types';
 import ModalContainer from './ModalContainer/ModalContainer';
 
 const ModalContext = createContext<IModalContext | null>(null);
