@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Search from 'components/Search/Search';
+import useGetUser from 'hooks/useGetUser';
+import { useModal } from 'components/ModalProvider/ModalProvider';
 
 function App() {
-  return <div className="App">Hello world!</div>;
+  const { openModal } = useModal();
+  const { data, error, makeRequest } = useGetUser();
+  const [search, setSearch] = useState<string>('');
+  console.log(data);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    makeRequest(search);
+  };
+
+  useEffect(() => {
+    if (data) {
+      openModal({ type: 'modal', content: { userData: data } });
+    } else {
+      openModal({ type: 'error', content: { error: error?.message } });
+    }
+  }, [data]);
+
+  return (
+    <div className="App">
+      <Search onSubmit={handleSubmit} onChange={handleChange} value={search} />
+    </div>
+  );
 }
 
 export default App;

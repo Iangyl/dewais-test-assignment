@@ -24,10 +24,11 @@
       "@utils/*": ["src/utils/*"],
       "@styles/*": ["src/styles/*"],
       "@pages/*": ["src/pages/*"],
-      "@queries/*": ["src/api"],
+      "@queries/*": ["src/api/*"],
+      "@interfaces/*": ["src/interfaces/*"],
       "@components/*": ["src/common/components/*"],
-      "@assets/*": ["src/common/assets"],
-      "@modules/*": ["src/common/modules"],
+      "@assets/*": ["src/common/assets/*"],
+      "@modules/*": ["src/common/modules/*"],
     }
   },
   "include": [
